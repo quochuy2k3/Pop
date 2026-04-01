@@ -30,9 +30,9 @@ export default function ContextSection() {
     <section ref={sectionRef} id="context" className="section-page">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 40% 50% at 30% 60%, rgba(59,130,246,0.04) 0%, transparent 100%)" }} />
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-16 items-center">
-          <div>
-            <h2 className="ctx-heading heading-page mb-6">Bối cảnh<br/>quyết định</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-[30vh]">
+            <h2 className="ctx-heading heading-section mb-6">Bối cảnh<br/>quyết định</h2>
             <div className="ctx-conclusion">
               <p style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(18px, 2.2vw, 28px)", fontWeight: 700, lineHeight: 1.3 }}>
                 Phương án A — <span style={{ color: "var(--color-accent-blue)" }}>tối ưu nhất</span> cho bối cảnh hiện tại.
