@@ -34,10 +34,23 @@ export default function SolutionsSection() {
     <section ref={sectionRef} id="solutions" className="section-page">
       <div className="container-main">
         <h2 className="sol-heading heading-page mb-8 lg:mb-10">3 hướng giải quyết</h2>
-        <div className="sol-grid grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4">
+        <div className="sol-grid grid grid-cols-1 md:grid-cols-[1.3fr_0.85fr_0.85fr] gap-3 lg:gap-4">
           {solutions.map((s) => (
-            <div key={s.label} className="sol-card relative rounded-2xl overflow-hidden" style={{ padding: "clamp(20px, 2.5vw, 32px)", border: s.selected ? "1px solid rgba(59,130,246,0.35)" : "1px solid rgba(232,232,227,0.1)", background: s.selected ? "rgba(59,130,246,0.06)" : "rgba(232,232,227,0.03)", opacity: s.selected ? 1 : 0.7 }}>
-              {s.selected && <div className="absolute top-3 right-3 flex items-center gap-1.5"><span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--color-accent-blue)" }} /><span style={{ fontSize: "9px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: "var(--color-accent-blue)", opacity: 0.8 }}>Chọn</span></div>}
+            <div key={s.label} className="sol-card relative rounded-2xl overflow-hidden" style={{
+              padding: "clamp(20px, 2.5vw, 32px)",
+              border: s.selected ? "1px solid rgba(59,130,246,0.35)" : "1px solid rgba(232,232,227,0.1)",
+              background: s.selected ? "rgba(59,130,246,0.06)" : "rgba(232,232,227,0.03)",
+              opacity: s.selected ? 1 : 0.7,
+              boxShadow: s.selected ? "0 0 40px -12px rgba(59,130,246,0.2), inset 0 1px 0 rgba(59,130,246,0.1)" : "none",
+            }}>
+              {s.selected && (
+                <div className="absolute -top-3 left-6 flex items-center gap-2 px-3 py-1 rounded-full" style={{
+                  background: "rgba(59,130,246,0.12)", border: "1px solid rgba(59,130,246,0.25)",
+                }}>
+                  <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#3b82f6" }} />
+                  <span style={{ fontSize: "9px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" as const, color: "var(--color-accent-blue)" }}>Đề xuất</span>
+                </div>
+              )}
               <div style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 800, lineHeight: 1, marginBottom: "12px", color: s.selected ? "var(--color-accent-blue)" : "var(--color-text-primary)", opacity: s.selected ? 0.15 : 0.08 }}>{s.label}</div>
               <h3 className="heading-card mb-1">{s.name}</h3>
               <p style={{ fontSize: "12px", color: "rgba(232,232,227,0.5)", marginBottom: "16px" }}>{s.keyword}</p>

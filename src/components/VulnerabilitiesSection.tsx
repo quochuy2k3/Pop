@@ -16,7 +16,9 @@ export default function VulnerabilitiesSection() {
     if (!ref.current) return;
     const ctx = gsap.context(() => {
       gsap.from(".vuln-card-item", {
-        y: 40, opacity: 0, duration: 0.8, ease: "power2.out", stagger: 0.15,
+        y: 30, opacity: 0, scale: 0.95,
+        rotateZ: (i: number) => (i - 1) * -2,
+        stagger: 0.15, duration: 0.8, ease: "power3.out",
         scrollTrigger: { trigger: ".vuln-grid", start: "top 80%" },
       });
       gsap.from(".vuln-bottom", {
@@ -41,6 +43,7 @@ export default function VulnerabilitiesSection() {
               padding: "clamp(20px, 2.5vw, 32px)",
               border: "1px solid rgba(239,68,68,0.12)",
               background: "rgba(239,68,68,0.03)",
+              animation: 'redPulse 4s ease-in-out infinite',
             }}>
               {/* Watermark number */}
               <div className="absolute -top-2 -right-1 pointer-events-none select-none" style={{

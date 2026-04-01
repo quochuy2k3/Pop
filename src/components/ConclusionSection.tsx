@@ -29,33 +29,32 @@ export default function ConclusionSection() {
     <section ref={sectionRef} id="conclusion" className="section-page flex-col justify-center">
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 50% 40% at 50% 50%, rgba(59,130,246,0.04) 0%, transparent 100%)" }} />
       <div className="container-main w-full">
-        {/* Top area: heading + cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16 items-center mb-10 lg:mb-14">
-          {/* Left: big heading */}
-          <div>
-            <h2 className="concl-heading heading-page">Kết luận</h2>
-          </div>
+        {/* Big gradient heading — centered */}
+        <h2 className="concl-heading text-gradient-blue" style={{
+          fontFamily: "var(--font-syne)", fontSize: "clamp(48px, 8vw, 100px)",
+          fontWeight: 800, lineHeight: 1, letterSpacing: "-0.04em",
+          textAlign: "center", marginBottom: "clamp(32px, 4vw, 56px)",
+        }}>Proof of Presence</h2>
 
-          {/* Right: 3 numbered points as cards */}
-          <div className="concl-grid flex flex-col gap-3">
-            {points.map((p) => (
-              <div key={p.num} className="concl-card flex items-center gap-4 lg:gap-5 rounded-xl" style={{
-                padding: "clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 28px)",
-                border: "1px solid rgba(59,130,246,0.12)",
-                background: "rgba(59,130,246,0.03)",
-              }}>
-                <span style={{
-                  fontFamily: "var(--font-syne)", fontSize: "clamp(28px, 3vw, 40px)",
-                  fontWeight: 800, color: "var(--color-accent-blue)", opacity: 0.2,
-                  lineHeight: 1, minWidth: "40px",
-                }}>{p.num}</span>
-                <p style={{
-                  fontFamily: "var(--font-syne)", fontSize: "clamp(16px, 1.8vw, 22px)",
-                  fontWeight: 600, lineHeight: 1.3,
-                }}>{p.text}</p>
-              </div>
-            ))}
-          </div>
+        {/* 3 numbered points below — centered */}
+        <div className="concl-grid flex flex-col gap-3 max-w-2xl mx-auto mb-10 lg:mb-14">
+          {points.map((p) => (
+            <div key={p.num} className="concl-card flex items-center gap-4 lg:gap-5 rounded-xl" style={{
+              padding: "clamp(16px, 2vw, 24px) clamp(20px, 2.5vw, 28px)",
+              border: "1px solid rgba(59,130,246,0.12)",
+              background: "rgba(59,130,246,0.03)",
+            }}>
+              <span style={{
+                fontFamily: "var(--font-syne)", fontSize: "clamp(28px, 3vw, 40px)",
+                fontWeight: 800, color: "var(--color-accent-blue)", opacity: 0.2,
+                lineHeight: 1, minWidth: "40px",
+              }}>{p.num}</span>
+              <p style={{
+                fontFamily: "var(--font-syne)", fontSize: "clamp(16px, 1.8vw, 22px)",
+                fontWeight: 600, lineHeight: 1.3,
+              }}>{p.text}</p>
+            </div>
+          ))}
         </div>
 
         {/* Bottom: author + CTA */}
