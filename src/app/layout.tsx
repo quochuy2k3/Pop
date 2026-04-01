@@ -14,7 +14,7 @@ const syne = Syne({
   weight: ["400", "600", "700", "800"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pop-red.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://present-topic-pop.vercel.app";
 
 export const metadata: Metadata = {
   title: "Proof of Presence (PoP) — Xác minh hiện diện thực tế",
